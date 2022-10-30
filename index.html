@@ -6,6 +6,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kalenjin Time Announcer</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+
+      /**
+       * Define if <link rel='next|prev|prefetch'> should
+       * be preloaded when accessing this page
+       */
+      const PREFETCH = true;
+
+      /**
+       * Define which link-rel's should be preloaded if enabled.
+       */
+      const PREFETCH_LINK_RELS = ['index', 'next', 'prev', 'prefetch'];
+
+      /**
+       * prefetchCache
+       */
+      function prefetchCache() {
+        if (navigator.serviceWorker.controller) {
+
+          let links = document.querySelectorAll(
+            PREFETCH_LINK_RELS.map((rel) => {
+              return 'link[rel=' + rel + ']';
+            }).join(',')
+          );
+
+          if (links.length > 0) {
+            Array.from(links)
+              .map((link) => {
+                let href = link.getAttribute('href');
+                navigator.serviceWorker.controller.postMessage({
+                  action: 'cache',
+                  url: href,
+                });
+              });
+          }
+
+
+        }
+      }
+
+      /**
+       * Register Service Worker
+       */
+      navigator.serviceWorker
+        .register('/serviceWorker.js', { scope: '/' })
+        .then(() => {
+          console.log('Service Worker Registered');
+        });
+
+      /**
+       * Wait if ServiceWorker is ready
+       */
+      navigator.serviceWorker
+        .ready
+        .then(() => {
+          if (PREFETCH) {
+            prefetchCache();
+          }
+        });
+
+    }
+  </script>
   <script defer src="js/gapless5.js"></script>
   <script defer src="js/app.js"></script>
 </head>
@@ -15,11 +79,11 @@
   <div>
     <h2>Kalenjin Time Announcer</h2>
     <div>
-    
-      </div>
-      <p>Click the <span>Say Time</span> button below to hear the current time in Kalenjin Language</p>
-      <p>You can adjust the voice playback speed using the slider below</p>
-    
+
+    </div>
+    <p>Click the <span>Say Time</span> button below to hear the current time in Kalenjin Language</p>
+    <p>You can adjust the voice playback speed using the slider below</p>
+
     <p id="time-words">Time appears here</p>
     <div>
       <div class="input-container">
@@ -29,12 +93,14 @@
     </div>
     <div class="btn-container">
       <button id="play-btn">Say Time</button>
-      
+
     </div>
-    
+
   </div>
   <footer>
     ©Made by Gerison Kimathi, <a href="tel:+254715870654">0715870654</a>
+
+
   </footer>
 </body>
 
