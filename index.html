@@ -56,7 +56,7 @@
        * Register Service Worker
        */
       navigator.serviceWorker
-        .register('/serviceWorker.js', { scope: '/' })
+        .register('serviceWorker.js', { scope: '/' })
         .then(() => {
           console.log('Service Worker Registered');
         });
