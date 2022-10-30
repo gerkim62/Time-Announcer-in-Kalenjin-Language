@@ -2,7 +2,7 @@ const CACHE_VERSION = 1;
 
 //const BASE_CACHE_FILES = ["index.html","/",'js/gapless5.js',"js/app.js","style.css","sounds/poch.aac","sounds/agenge.aac","sounds/oeng.aac","sounds/somok.aac","sounds/angwan.aac","sounds/muut.aac","sounds/lo.aac","sounds/tisap.aac","sounds/sisit.aac","sounds/sogol.aac","sounds/taman.aac","sounds/poch.aac","sounds/taman.aac","sounds/tiptem.aac","sounds/sosom.aac","sounds/artam.aac","sounds/konom.aac","sounds/ak.aac","sounds/sait.aac"]
 
-const OFFLINE_CACHE_FILES = ["index.html","/",'js/gapless5.js',"js/app.js","style.css","sounds/poch.aac","sounds/agenge.aac","sounds/oeng.aac","sounds/somok.aac","sounds/angwan.aac","sounds/muut.aac","sounds/lo.aac","sounds/tisap.aac","sounds/sisit.aac","sounds/sogol.aac","sounds/taman.aac","sounds/poch.aac","sounds/taman.aac","sounds/tiptem.aac","sounds/sosom.aac","sounds/artam.aac","sounds/konom.aac","sounds/ak.aac","sounds/sait.aac"]
+const OFFLINE_CACHE_FILES =['/'] //["index.html","/",'js/gapless5.js',"js/app.js","style.css","sounds/poch.aac","sounds/agenge.aac","sounds/oeng.aac","sounds/somok.aac","sounds/angwan.aac","sounds/muut.aac","sounds/lo.aac","sounds/tisap.aac","sounds/sisit.aac","sounds/sogol.aac","sounds/taman.aac","sounds/poch.aac","sounds/taman.aac","sounds/tiptem.aac","sounds/sosom.aac","sounds/artam.aac","sounds/konom.aac","sounds/ak.aac","sounds/sait.aac"]
 
 const NOT_FOUND_CACHE_FILES = [
     '/style.css',
