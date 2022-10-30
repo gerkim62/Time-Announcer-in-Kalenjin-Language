@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+
+
+ body{
+   background: #f1f3fb;
+   color: black;
+   display: grid;
+   
+   min-height: 100vh;
+   text-align: center;
+   overflow: hidden;
+   
+   font-family: "Poppins", sans-serif;
+ }
+ 
+ span{
+   color: #6658d3;
+ }
+ 
+  #time-words{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    color: #6658d3
+  }
+    #time-words:first-letter{
+      text-transform: uppercase;
+    }
+    button{
+      margin:  auto;
+      padding: 5px 10px;
+      color: #6658d3;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.5rem;
+    }
+
+.input-container{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container input{
+  width: 80%;
+}
+
+.btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#loader{
+  position: absolute;
+  inset:0;
+  background: rgba(0,0,0,.7);
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  color: white;
+}
+
+p{
+  text-align: left;
+  width: 85%;
+  margin: 10px auto;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width:100%;
+  background: rgba(0,0,0,.7);
+  margin: 0;
+  padding: 5px;
+  left: 0;
+  color: white
+  
+}
+
+footer a{
+  color: white;
+}
