@@ -75,8 +75,8 @@ const playSounds = sounds => {
     tracks: sounds,
     crossFade:100,
     playbackRate:playbackRate,
-    exclusive:true
-    //crossFadeShape:CrossFadeShape.linear
+    exclusive:true,
+    crossFadeShape:CrossfadeShape.Linear
   })
   player.play()
 }
